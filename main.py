@@ -1,10 +1,10 @@
 from tkinter import *
 from tkinter import messagebox, ttk
-from PIL import ImageTk
-import mysql.connector as connector
+from PIL import ImageTk # pip install pillow
+import mysql.connector as connector # pip install mysql-connector-python
 import sys
-import datetime
-import csv
+import datetime # pip install DateTime
+import csv # pip install csv
 import os
 
 def connect_to_database():

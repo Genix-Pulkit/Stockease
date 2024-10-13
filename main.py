@@ -765,7 +765,7 @@ class RecOrder:
             messagebox.showerror(parent = self.root, message = 'Please fill all the fields', title = 'Error')
         else:
             cursor = self.connection.cursor()
-            cursor.execute("INSERT INTO Orders (product_id, quantity_ordered, order_date) VALUES (%s, %s, %s)", (self.prod_id.get(), self.qnt_ordered.get(), self.order_date.get()))
+            cursor.execute("INSERT INTO Orders (product_id, quantity_ordered, order_date, status) VALUES (%s, %s, %s, 'Not Delivered')", (self.prod_id.get(), self.qnt_ordered.get(), self.order_date.get()))
             connection.commit()
             messagebox.showinfo(parent = self.root, message = 'Order recorded successfully', title = 'Success')
             self.prod_id.set(0)

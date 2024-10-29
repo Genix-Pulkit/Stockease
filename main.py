@@ -369,7 +369,7 @@ class AddProd:
             try:
                 cursor.execute("INSERT INTO Products (name, SKU, supplier, price, quantity) VALUES (%s, %s, %s, %s, %s)", (name, sku, supplier, price, quantity))
                 self.connection.commit()
-                cursor.execute("SELECT is FROM Products where name = %s", name)
+                cursor.execute("SELECT id FROM Products where name = %s", name)
                 id = cursor.fetchone()[0]
                 messagebox.showinfo('Success', f'Product added successfully. Product id: {id}', parent=self.root)
 
